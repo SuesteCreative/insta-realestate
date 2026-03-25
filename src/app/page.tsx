@@ -1,6 +1,7 @@
 import Generator from '@/components/Generator';
 import Pricing from '@/components/Pricing';
 import Showcase from '@/components/Showcase';
+import Image from 'next/image';
 import { Sparkles, Zap, Image as ImageIcon, Download, CheckCircle } from 'lucide-react';
 
 export default function Home() {
@@ -8,7 +9,10 @@ export default function Home() {
     <main className="landing-page">
       {/* Prime Navigation */}
       <nav className="navbar glass-card fade-in">
-        <div className="logo gold-text">Insta-RealEstate</div>
+        <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Image src="/logo.png" alt="Insta-RealEstate Logo" width={40} height={40} style={{ borderRadius: '8px' }} />
+          <div className="logo gold-text">Insta-RealEstate</div>
+        </div>
         <div className="nav-links">
           <a href="#features">The Workflow</a>
           <a href="#pricing">Membership</a>
