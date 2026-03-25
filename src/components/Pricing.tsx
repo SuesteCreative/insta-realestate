@@ -61,10 +61,10 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="pricing-section">
+    <section id="pricing" className="container">
       <div className="section-header fade-in">
-        <h2 className="gold-text">Pricing That Scales With You</h2>
-        <p>Choose the plan that fits your agency's growth.</p>
+        <h2 className="section-title">The Membership</h2>
+        <p className="section-subtitle">Premium property marketing. One-time setup, lifetime efficiency.</p>
       </div>
 
       <div className="pricing-grid">
@@ -73,21 +73,33 @@ export default function Pricing() {
             key={plan.id} 
             className={`pricing-card glass-card fade-in ${plan.highlight ? 'featured' : ''}`}
           >
-            {plan.highlight && <div className="featured-badge">Best Value</div>}
+            {plan.highlight && (
+              <div 
+                style={{ 
+                  textTransform: 'uppercase', 
+                  fontSize: '0.75rem', 
+                  letterSpacing: '0.1rem',
+                  color: 'var(--gold)',
+                  marginBottom: '1rem'
+                }}
+              >
+                Best Value
+              </div>
+            )}
             
             <div className="plan-header">
-              <h3 className="gold-text">{plan.name}</h3>
-              <div className="plan-price">
-                <span className="amount">{plan.price}</span>
-                <span className="period">{plan.period}</span>
+              <h3 className="gold-text" style={{ fontSize: '1.8rem' }}>{plan.name}</h3>
+              <div className="plan-price" style={{ margin: '1rem 0' }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: 700 }}>{plan.price}</span>
+                <span className="period" style={{ color: 'var(--text-secondary)' }}>{plan.period}</span>
               </div>
-              <p className="plan-description">{plan.description}</p>
+              <p className="plan-description" style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{plan.description}</p>
             </div>
 
-            <ul className="plan-features">
+            <ul style={{ margin: '2rem 0', flex: 1 }}>
               {plan.features.map((feature, index) => (
-                <li key={index}>
-                  <Check className="gold-text" size={18} />
+                <li key={index} className="price-item" style={{ marginBottom: '1rem' }}>
+                  <Check className="gold-text" size={18} style={{ flexShrink: 0 }} />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -96,7 +108,8 @@ export default function Pricing() {
             <button 
               onClick={() => handleSubscribe(plan.priceId)}
               disabled={loading !== null}
-              className={`btn-purchase ${plan.highlight ? 'btn-primary' : 'btn-outline'}`}
+              className="btn-primary"
+              style={{ width: '100%' }}
             >
               {loading === plan.priceId ? 'Redirecting...' : 'Get Started Now'}
             </button>
@@ -104,16 +117,26 @@ export default function Pricing() {
         ))}
       </div>
 
-      <div className="trust-badges fade-in">
-         <div className="badge">
+      <div 
+        className="trust-badges fade-in" 
+        style={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          gap: '2.5rem', 
+          marginTop: '5rem',
+          opacity: 0.6
+        }}
+      >
+         <div className="badge" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <ShieldCheck size={20} className="gold-text" />
             <span>GDPR Compliant</span>
          </div>
-         <div className="badge">
+         <div className="badge" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Zap size={20} className="gold-text" />
             <span>Instant Access</span>
          </div>
-         <div className="badge">
+         <div className="badge" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Building2 size={20} className="gold-text" />
             <span>Used by 50+ Agencies</span>
          </div>
