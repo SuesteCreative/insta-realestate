@@ -1,4 +1,5 @@
 import { stripe } from "@/lib/stripe";
+import { supabase } from "@/lib/supabase";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -19,25 +20,34 @@ export async function POST(req: Request) {
     return new NextResponse(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
-  const session = event.data.object as Stripe.Checkout.Session;
-
   if (event.type === "checkout.session.completed") {
+    const session = event.data.object as Stripe.Checkout.Session;
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string
     );
-    const customerId = session.customer as string;
 
-    console.log(`🔔 New Subscription: ${subscription.id} for Customer: ${customerId}`);
-    
-    // TODO: Update your database (Supabase) to grant Pro access
-    // This is where we record the user's Pro status
+    const { error } = await supabase.from('subscriptions').insert({
+      stripe_customer_id: session.customer as string,
+      stripe_subscription_id: session.subscription as string,
+      status: subscription.status,
+      price_id: subscription.items.data[0].price.id,
+      email: session.customer_details?.email,
+    });
+
+    if (error) console.error('Database Error:', error.message);
+    else console.log(`🔔 New Subscription: ${subscription.id}`);
   }
 
   if (event.type === "customer.subscription.deleted") {
     const subscription = event.data.object as Stripe.Subscription;
-    console.log(`❌ Subscription Deleted: ${subscription.id}`);
     
-    // TODO: Revoke Pro access in your database
+    const { error } = await supabase
+      .from('subscriptions')
+      .update({ status: 'canceled' })
+      .eq('stripe_subscription_id', subscription.id);
+
+    if (error) console.error('Database Error:', error.message);
+    else console.log(`❌ Subscription Deleted: ${subscription.id}`);
   }
 
   return new NextResponse(null, { status: 200 });
