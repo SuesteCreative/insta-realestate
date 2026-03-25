@@ -1,5 +1,6 @@
 import Generator from '@/components/Generator';
 import Pricing from '@/components/Pricing';
+import Showcase from '@/components/Showcase';
 import { Sparkles, Zap, Image as ImageIcon, Download } from 'lucide-react';
 
 export default function Home() {
@@ -36,12 +37,14 @@ export default function Home() {
         <div className="hero-mockup glass-card">
           <div className="mockup-header gold-text">Slide 1: Cover</div>
           <div className="mockup-content">
-             <div className="mockup-skeleton-img"></div>
-             <div className="mockup-skeleton-text">Luxury Ocean View Villa</div>
-             <div className="mockup-skeleton-price">€ 2,450,000</div>
+            <div className="mockup-skeleton-img"></div>
+            <div className="mockup-skeleton-text">Luxury Ocean View Villa</div>
+            <div className="mockup-skeleton-price">€ 2,450,000</div>
           </div>
         </div>
       </header>
+
+      <Showcase />
 
       <section id="features" className="features-section">
         <h2 className="gold-text">Everything you need to stand out</h2>

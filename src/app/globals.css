@@ -531,6 +531,61 @@ a {
   color: var(--gold);
 }
 
-.legal-section p {
-  margin-bottom: 1rem;
+/* Showcase Section */
+.showcase-section {
+  padding: 10rem 5%;
+  background: var(--bg-secondary);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.showcase-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.1rem;
+}
+
+.showcase-image {
+  width: 100%;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+.showcase-image:hover {
+  transform: translateY(-5px);
+}
+
+.showcase-arrow {
+  color: var(--gold);
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .showcase-arrow {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
 }
