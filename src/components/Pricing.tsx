@@ -17,7 +17,7 @@ const plans = [
       'Downloadable high-res assets',
       'Priority email support',
     ],
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_MONTHLY,
+    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_MONTHLY || 'price_1TEtxJA9MEhB4gDgud4cqXbU',
     highlight: false,
   },
   {
@@ -33,7 +33,7 @@ const plans = [
       'API access (coming soon)',
       'Dedicated success manager',
     ],
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_ANNUAL,
+    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_ANNUAL || 'price_1TEtxaA9MEhB4gDgPKRonlm6',
     highlight: true,
   },
 ];
