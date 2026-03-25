@@ -25,7 +25,9 @@
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.35",
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

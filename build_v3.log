@@ -1,0 +1,22 @@
+
+> insta-realestate@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 1380ms
+  Running TypeScript ...
+Failed to type check.
+
+./src/lib/stripe.ts:8:3
+Type error: Type '"2025-01-27-acacia"' is not assignable to type '"2026-02-25.clover"'.
+
+   6 |
+   7 | export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+>  8 |   apiVersion: '2025-01-27-acacia', // Latest stable API version
+     |   ^
+   9 | });
+  10 |
+Next.js build worker exited with code: 1 and signal: null

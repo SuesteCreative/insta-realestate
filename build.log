@@ -1,0 +1,32 @@
+
+> insta-realestate@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 4 errors:
+./src/app/cancel/page.tsx
+'styled-jsx' cannot be imported from a Server Component module
+It only works in a Client Component but none of its parents are marked with 'use client', so they're Server Components by default.
+
+
+./src/app/privacy/page.tsx
+'styled-jsx' cannot be imported from a Server Component module
+It only works in a Client Component but none of its parents are marked with 'use client', so they're Server Components by default.
+
+
+./src/app/success/page.tsx
+'styled-jsx' cannot be imported from a Server Component module
+It only works in a Client Component but none of its parents are marked with 'use client', so they're Server Components by default.
+
+
+./src/app/terms/page.tsx
+'styled-jsx' cannot be imported from a Server Component module
+It only works in a Client Component but none of its parents are marked with 'use client', so they're Server Components by default.
+
+
+    at ignore-listed frames

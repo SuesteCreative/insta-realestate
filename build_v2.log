@@ -1,0 +1,22 @@
+
+> insta-realestate@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 1429ms
+  Running TypeScript ...
+Failed to type check.
+
+./scripts/outreach.ts:1:24
+Type error: Could not find a declaration file for module 'nodemailer'. 'C:/Users/pedro/OneDrive/Survive/insta-realestate/node_modules/nodemailer/lib/nodemailer.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/nodemailer` if it exists or add a new declaration (.d.ts) file containing `declare module 'nodemailer';`
+
+> 1 | import nodemailer from 'nodemailer';
+    |                        ^
+  2 | import dotenv from 'dotenv';
+  3 |
+  4 | dotenv.config({ path: '.env.local' });
+Next.js build worker exited with code: 1 and signal: null

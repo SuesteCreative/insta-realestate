@@ -452,8 +452,85 @@ a {
   gap: 0.8rem;
 }
 
-@media (max-width: 768px) {
-  .pricing-card.featured { transform: scale(1); }
-  .pricing-grid { gap: 2rem; }
-  .trust-badges { flex-direction: column; align-items: center; gap: 2rem; }
+/* Status & Legal Pages */
+.status-page, .legal-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 5%;
+  background: var(--bg-primary);
+}
+
+.status-card, .legal-card {
+  max-width: 800px;
+  width: 100%;
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.legal-card {
+  text-align: left;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.status-card h1, .legal-card h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-card p, .legal-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.next-steps {
+  text-align: left;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  background: var(--gold);
+  color: var(--bg-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.red-text { color: #ff4d4d; }
+
+.legal-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.legal-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.legal-section p {
+  margin-bottom: 1rem;
 }

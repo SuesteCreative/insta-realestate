@@ -24,51 +24,6 @@ export default function SuccessPage() {
           Go to Dashboard <ArrowRight size={18} />
         </a>
       </div>
-
-      <style jsx>{`
-        .status-page {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 2rem;
-          background: var(--bg-primary);
-        }
-        .status-card {
-          max-width: 600px;
-          padding: 5rem;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-        }
-        h1 { font-size: 3rem; }
-        p { color: var(--text-muted); line-height: 1.6; font-size: 1.2rem; }
-        .next-steps {
-           text-align: left;
-           margin: 2rem 0;
-           width: 100%;
-        }
-        .step {
-           display: flex;
-           align-items: center;
-           gap: 1.5rem;
-           margin-bottom: 1.5rem;
-        }
-        .step-number {
-           background: var(--gold);
-           color: var(--bg-primary);
-           width: 30px;
-           height: 30px;
-           border-radius: 50%;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-weight: bold;
-           flex-shrink: 0;
-        }
-      `}</style>
     </main>
   );
 }
