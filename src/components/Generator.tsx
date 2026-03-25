@@ -29,10 +29,10 @@ export default function Generator() {
   const handleDownload = async () => {
     if (slideRef.current === null) return;
     
-    // Set explicit size for 1080x1080 capture
+    // Set explicit size for 1080x1350 Portrait capture (Instagram Optimized)
     const dataUrl = await htmlToImage.toPng(slideRef.current, {
       width: 1080,
-      height: 1080,
+      height: 1350,
     });
     
     const link = document.createElement('a');
@@ -79,9 +79,9 @@ export default function Generator() {
               </div>
            </div>
 
-           {/* Hidden container for rendering at high res */}
+           {/* Hidden container for rendering at high-res 1080x1350 (Portrait) */}
            <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
-              <div ref={slideRef} style={{ width: '1080px', height: '1080px' }}>
+              <div ref={slideRef} style={{ width: '1080px', height: '1350px' }}>
                  <SlideTemplate data={result.data} id="slide-capture" />
               </div>
            </div>

@@ -66,8 +66,8 @@ export default function Home() {
           </div>
           <div className="feature-card glass-card">
             <Download className="gold-text" size={32} />
-            <h3>Ready for Meta</h3>
-            <p>1080x1080 optimized assets ready for Instagram, Facebook, and Threads.</p>
+            <h3>Instagram Optimized</h3>
+            <p>1080x1350 Portrait assets ready for Instagram, Facebook, and Threads. More screen space, more impact.</p>
           </div>
         </div>
       </section>
