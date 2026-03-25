@@ -26,6 +26,11 @@ export async function POST(req: Request) {
       session.subscription as string
     );
 
+    if (!supabase) {
+      console.error('Database connection failed: Supabase client not initialized');
+      return new NextResponse("Service Unavailable", { status: 503 });
+    }
+
     const { error } = await supabase.from('subscriptions').insert({
       stripe_customer_id: session.customer as string,
       stripe_subscription_id: session.subscription as string,
@@ -41,6 +46,11 @@ export async function POST(req: Request) {
   if (event.type === "customer.subscription.deleted") {
     const subscription = event.data.object as Stripe.Subscription;
     
+    if (!supabase) {
+      console.error('Database connection failed: Supabase client not initialized');
+      return new NextResponse("Service Unavailable", { status: 503 });
+    }
+
     const { error } = await supabase
       .from('subscriptions')
       .update({ status: 'canceled' })
