@@ -85,7 +85,7 @@ export default function Home() {
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
          </div>
-         <p>© 2026 Insta-RealEstate. Powered by Antigravity Agent.</p>
+         <p>© 2026 Insta-RealEstate. Premium property marketing automated.</p>
       </footer>
     </main>
   );
