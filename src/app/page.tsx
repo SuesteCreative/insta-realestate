@@ -1,94 +1,88 @@
 import Generator from '@/components/Generator';
 import Pricing from '@/components/Pricing';
 import Showcase from '@/components/Showcase';
-import { Sparkles, Zap, Image as ImageIcon, Download } from 'lucide-react';
+import { Sparkles, Zap, Image as ImageIcon, Download, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
     <main className="landing-page">
-      {/* Navbar Placeholder */}
-      <nav className="navbar glass-card">
+      {/* Prime Navigation */}
+      <nav className="navbar glass-card fade-in">
         <div className="logo gold-text">Insta-RealEstate</div>
         <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <button className="btn-primary">Get Started</button>
+          <a href="#features">The Workflow</a>
+          <a href="#pricing">Membership</a>
+          <button className="btn-primary">Connect Account</button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className="hero section fade-in">
-        <div className="hero-content">
-          <span className="badge">Updated v2.0</span>
+      {/* Hero: Luxury Focus */}
+      <header className="hero fade-in">
+        <div className="container">
           <h1 className="hero-title">
-            Convert property URLs <br />
-            into <span className="gold-text">Instagram carousels</span> in 30 seconds.
+            The standard for <br />
+            <span className="gold-text">High-Reach</span> Property Carousels.
           </h1>
           <p className="hero-subtitle">
-            Paste a link from Zillow, Idealista, or RE/MAX. Get a folder of branded slides manually designed by code. No Canva required.
+            Instantly turn any listing URL into a 1080x1350 Portrait-optimized marketing package. Designed for the elite agent who demands precision, speed, and premium aesthetics.
           </p>
           <div className="hero-actions">
-            <button className="btn-primary">Start Free Trial</button>
-            <button className="btn-secondary">Watch Demo</button>
-          </div>
-        </div>
-        
-        {/* Visual Mockup Placeholder */}
-        <div className="hero-mockup glass-card">
-          <div className="mockup-header gold-text">Slide 1: Cover</div>
-          <div className="mockup-content">
-            <div className="mockup-skeleton-img"></div>
-            <div className="mockup-skeleton-text">Luxury Ocean View Villa</div>
-            <div className="mockup-skeleton-price">€ 2,450,000</div>
+            <button className="btn-primary">Elevate Your Listings</button>
           </div>
         </div>
       </header>
 
+      {/* Production-Grade Showcase */}
       <Showcase />
 
-      <section id="features" className="features-section">
-        <h2 className="gold-text">Everything you need to stand out</h2>
+      {/* High-End Features */}
+      <section id="features" className="container section-header">
+        <h2 className="section-title">Engineered for conversion</h2>
         <div className="features-grid">
           <div className="feature-card glass-card">
-            <Sparkles className="gold-text" size={32} />
-            <h3>Premium Aesthetics</h3>
-            <p>No generic templates. High-end typography and layouts that command attention.</p>
+            <Sparkles className="gold-text" size={28} />
+            <h3>Boutique Aesthetic</h3>
+            <p>Every slide is built with Playfair Display and Inter. No messy designs, only high-value typography that commands premium fees.</p>
           </div>
           <div className="feature-card glass-card">
-            <Zap className="gold-text" size={32} />
-            <h3>30-Second Workflow</h3>
-            <p>Paste a listing URL and get a full carousel pack instantly. No manual work.</p>
+            <Zap className="gold-text" size={28} />
+            <h3>30-Second Turnaround</h3>
+            <p>Paste a Zillow or Idealista link. Our engine extracts the data and renders your luxury carousel package in seconds.</p>
           </div>
           <div className="feature-card glass-card">
-            <ImageIcon className="gold-text" size={32} />
-            <h3>Auto-Scraping</h3>
-            <p>We extract high-res images and details directly from Zillow, Idealista, and more.</p>
+            <ImageIcon className="gold-text" size={28} />
+            <h3>High-Res Fulfillment</h3>
+            <p>Automated extraction of high-resolution property imagery. No blurring, only crisp, retina-ready assets for Meta.</p>
           </div>
           <div className="feature-card glass-card">
-            <Download className="gold-text" size={32} />
-            <h3>Instagram Optimized</h3>
-            <p>1080x1350 Portrait assets ready for Instagram, Facebook, and Threads. More screen space, more impact.</p>
+            <Download className="gold-text" size={28} />
+            <h3>Portrait Optimized</h3>
+            <p>Full 1080x1350 vertical format. Take up 30% more screen real estate than 1:1 posts. Win the attention war.</p>
           </div>
         </div>
       </section>
 
+      {/* Membership Tiers */}
       <Pricing />
 
-      {/* CTA Section */}
-      <section className="cta-banner section">
-         <div className="glass-card cta-content">
-            <h2>Start with 3 free listings.</h2>
-            <p>Most agents save 4 hours a week using Insta-RealEstate.</p>
-            <button className="btn-primary">Get Pro Plan - €29/mo</button>
+      {/* Final Call to Action */}
+      <section className="container section-header fade-in">
+         <div className="glass-card">
+            <h2 className="section-title">The elite choosing efficiency.</h2>
+            <p className="section-subtitle">Save 5 hours a week per listing. Start now with 3 complimentary generations.</p>
+            <br />
+            <button className="btn-primary">Get Access - €29/mo</button>
          </div>
       </section>
 
+      {/* Luxury Footer */}
       <footer className="footer">
          <div className="footer-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Integrity Policy</a>
+            <a href="/terms">Terms of Membership</a>
+            <a href="mailto:info.instarealestate@gmail.com">Direct Support</a>
          </div>
-         <p>© 2026 Insta-RealEstate. Premium property marketing automated.</p>
+         <p>© 2026 INSTA-REALESTATE. PREMIUM PROPERTY AUTOMATION. ALL RIGHTS RESERVED.</p>
       </footer>
     </main>
   );
